@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+</head>
+<body>
+<div id="app"></div>
+<script src="MVVM.js"></script>
+<script>
+let vm = new MVVM({
+  $el: '#app',
+  data() {
+    return {
+      text: 'abc11'
+    }
+  },
+  methods: {
+    click(e) {
+      alert(123)
+    }
+  },
+  template: `<div>
+                  <input type="text" v-model="text" v-focus>
+                  {{text}}
+                 <p @click="click">测试事件点我</p>
+            </div>`
+})
+</script>
+</body>
+</html>
